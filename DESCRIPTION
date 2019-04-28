@@ -1,12 +1,16 @@
 Package: soty
-Title: Calculate Shooter of the Year Points For Various Archery Rounds
+Title: Calculate Performance Points For Various Archery Rounds
 Version: 0.1
 Authors@R: 
     person(given = "Tim",
            family = "Wilson",
            role = c("aut", "cre"),
            email = "tim@timwilson.info")
-Description: This package caculates "Shooter of the Year" points for various archery rounds using the data from the 2016-2018 national archery tournaments hosted by the NFAA and USA Archery. The calculations use a "trimmed" version of the results for each round and equipment class with the top and bottom 10% of scores eliminated. The CDF of the remaining middle 80% are modeled with an exponential or linear fit to derive the final points value.
+Description: This package calculates "performance points" for various archery rounds using the data from the 
+  2016-2018 national archery tournaments hosted by the NFAA and USA Archery. The calculations use a "trimmed" version of 
+  the results for each round and equipment class with the top and bottom 10% of scores eliminated. The CDF of the remaining 
+  middle 80% are modeled with an exponential or linear fit to derive the final points value. The performance points are suitable for 
+  determining an annual "Shooter of the Year" winner for an archery organization.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
