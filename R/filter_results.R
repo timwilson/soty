@@ -4,19 +4,18 @@
 #' 'round' and 'class' columns and applies a multiplier to the score column to adjust for a one-day, two-day, or
 #' three-day event.
 #' @param results A dataframe containing scores from various archery events.
-#' @param round The specific round to filter.
-#' @param class The specific equipment class to filter.
-#' @param multiplier A multiplier to apply to each score (default = 1).
+#' @param archery_round The specific round to filter.
+#' @param equipment_class The specific equipment class to filter.
+#' @param divisor A divisor to apply to each score (default = 1).
 #' @return A new dataframe containing the filtered results.
 #' @importFrom dplyr filter
 #' @importFrom dplyr mutate
 #' @importFrom dplyr %>%
 #' @export
-filter_results <- function(results, round, class, multiplier = 1) {
+filter_results <- function(results, archery_round, equipment_class, divisor = 1) {
   df <- results %>%
-    filter(round == round,
-           class == class) %>%
-    mutate(score = score * multiplier)
+    filter(round == archery_round, class == equipment_class) %>%
+    mutate(score = score / divisor)
 
   return (df)
 }
